@@ -5,10 +5,10 @@
  */
 package ultimatetictactoe.field;
 
-import field.IField;
+import ultimatetictactoe.field.IField;
 import java.util.ArrayList;
 import java.util.List;
-import move.IMove;
+import ultimatetictactoe.move.IMove;
 
 /**
  *
@@ -28,19 +28,49 @@ public class UTTTField implements IField
     private String[][] microBoard8;
     private String[][] microBoard9;
     private ArrayList<String[][]> microBoards = new ArrayList<>();
+    
 
     public UTTTField()
     {
-        macroBoard = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
-        microBoard1 = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
-        microBoard2 = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
-        microBoard3 = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
-        microBoard4 = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
-        microBoard5 = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
-        microBoard6 = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
-        microBoard7 = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
-        microBoard8 = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
-        microBoard9 = new String[][]{{"-1","-1","-1"},{"-1","-1","-1"},{"-1","-1","-1"}};
+        macroBoard = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        
+        microBoard1 = new String[][]{{"-1","-1","-1"},
+                                     {"-1","-1","-1"},
+                                     {"-1","-1","-1"}};
+        
+        microBoard2 = new String[][]{{"-1","-1","-1"},
+                                     {"-1","-1","-1"},
+                                     {"-1","-1","-1"}};
+        
+        microBoard3 = new String[][]{{"-1","-1","-1"},
+                                     {"-1","-1","-1"},
+                                     {"-1","-1","-1"}};
+        
+        microBoard4 = new String[][]{{"-1","-1","-1"},
+                                     {"-1","-1","-1"},
+                                     {"-1","-1","-1"}};
+        
+        microBoard5 = new String[][]{{"-1","-1","-1"},
+                                     {"-1","-1","-1"},
+                                     {"-1","-1","-1"}};
+        
+        microBoard6 = new String[][]{{"-1","-1","-1"},
+                                     {"-1","-1","-1"},
+                                     {"-1","-1","-1"}};
+        
+        microBoard7 = new String[][]{{"-1","-1","-1"},
+                                     {"-1","-1","-1"},
+                                     {"-1","-1","-1"}};
+        
+        microBoard8 = new String[][]{{"-1","-1","-1"},
+                                     {"-1","-1","-1"},
+                                     {"-1","-1","-1"}};
+        
+        microBoard9 = new String[][]{{"-1","-1","-1"},
+                                     {"-1","-1","-1"},
+                                     {"-1","-1","-1"}};
     }
 
     @Override
