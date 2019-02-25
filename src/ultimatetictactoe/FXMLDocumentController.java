@@ -10,11 +10,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-<<<<<<< HEAD
+
 import javafx.scene.control.Label;
-=======
+
 import javafx.scene.control.Button;
->>>>>>> parent of 8722395... randomassshit
 
 /**
  *
@@ -22,11 +21,8 @@ import javafx.scene.control.Button;
  */
 public class FXMLDocumentController implements Initializable
 {
-    
-    @FXML
-<<<<<<< HEAD
+
     private Label label;
-=======
     private Button btn00_00;
     @FXML
     private Button btn00_10;
@@ -188,7 +184,6 @@ public class FXMLDocumentController implements Initializable
     private Button btn22_12;
     @FXML
     private Button btn22_22;
->>>>>>> parent of 8722395... randomassshit
     
     @FXML
     private void handleButtonAction(ActionEvent event)
@@ -202,8 +197,7 @@ public class FXMLDocumentController implements Initializable
     {
         // TODO
     }    
-<<<<<<< HEAD
-=======
+
 
     @FXML
     private void handleBtn00_00(ActionEvent event)
@@ -609,6 +603,5 @@ public class FXMLDocumentController implements Initializable
     private void handleBtn22_22(ActionEvent event)
     {
     }
->>>>>>> parent of 8722395... randomassshit
-    
+
 }
