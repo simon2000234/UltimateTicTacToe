@@ -1,7 +1,7 @@
-package ultimatetictactoe.bot;
+package bot;
 
-import ultimatetictactoe.game.IGameState;
-import ultimatetictactoe.move.IMove;
+import game.IGameState;
+import move.IMove;
 
 /**
  *
