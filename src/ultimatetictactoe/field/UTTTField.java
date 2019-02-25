@@ -32,10 +32,12 @@ public class UTTTField implements IField
 
     public UTTTField()
     {
+        // macroBoard arekryds og bolle the big one
         macroBoard = new String[][]{{"-1","-1","-1"},
                                     {"-1","-1","-1"},
                                     {"-1","-1","-1"}};
-        
+        // every microBoard are the small board inside 
+        // the macroBoard
         microBoard1 = new String[][]{{"-1","-1","-1"},
                                      {"-1","-1","-1"},
                                      {"-1","-1","-1"}};
