@@ -28,10 +28,10 @@ public class UTTTField implements IField
     private String[][] microBoard8;
     private String[][] microBoard9;
     private ArrayList<String[][]> microBoards = new ArrayList<>();
-    
 
     public UTTTField()
     {
+
         // macroBoard arekryds og bolle the big one
         macroBoard = new String[][]{{"-1","-1","-1"},
                                     {"-1","-1","-1"},
@@ -73,6 +73,7 @@ public class UTTTField implements IField
         microBoard9 = new String[][]{{"-1","-1","-1"},
                                      {"-1","-1","-1"},
                                      {"-1","-1","-1"}};
+
     }
 
     @Override

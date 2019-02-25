@@ -10,8 +10,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+
+import javafx.scene.control.Label;
+
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
 
 /**
  *
@@ -19,8 +21,8 @@ import javafx.scene.layout.GridPane;
  */
 public class FXMLDocumentController implements Initializable
 {
-    
-    @FXML
+
+    private Label label;
     private Button btn00_00;
     @FXML
     private Button btn00_10;
@@ -182,27 +184,13 @@ public class FXMLDocumentController implements Initializable
     private Button btn22_12;
     @FXML
     private Button btn22_22;
-    @FXML
-    private GridPane MacroGridPane;
-    @FXML
-    private GridPane MircroGridPane1;
-    @FXML
-    private GridPane MircroGridPane2;
-    @FXML
-    private GridPane MircroGridPane3;
-    @FXML
-    private GridPane MircroGridPane4;
-    @FXML
-    private GridPane MircroGridPane5;
-    @FXML
-    private GridPane MircroGridPane6;
-    @FXML
-    private GridPane MircroGridPane7;
-    @FXML
-    private GridPane MircroGridPane8;
-    @FXML
-    private GridPane MircroGridPane9;
     
+    @FXML
+    private void handleButtonAction(ActionEvent event)
+    {
+        System.out.println("You clicked me!");
+        label.setText("Hello World!");
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -210,10 +198,10 @@ public class FXMLDocumentController implements Initializable
         // TODO
     }    
 
+
     @FXML
     private void handleBtn00_00(ActionEvent event)
     {
-        
     }
 
     @FXML
@@ -615,5 +603,5 @@ public class FXMLDocumentController implements Initializable
     private void handleBtn22_22(ActionEvent event)
     {
     }
-    
+
 }
