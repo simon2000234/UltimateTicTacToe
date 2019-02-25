@@ -5,10 +5,10 @@
  */
 package ultimatetictactoe.field;
 
-import ultimatetictactoe.field.IField;
+import field.IField;
 import java.util.ArrayList;
 import java.util.List;
-import ultimatetictactoe.move.IMove;
+import move.IMove;
 
 /**
  *
