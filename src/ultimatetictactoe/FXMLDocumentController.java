@@ -15,6 +15,9 @@ import javafx.scene.control.Label;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
+import ultimatetictactoe.field.UTTTField;
+import ultimatetictactoe.game.GameManager;
+import ultimatetictactoe.game.GameState;
 import ultimatetictactoe.move.Move;
 
 
@@ -208,18 +211,18 @@ public class FXMLDocumentController implements Initializable
     @FXML
     private GridPane MircroGridPane9;
     private Move theMove;
+    private GameManager gm;
+    private GameState gs;
+    private UTTTField field;
     
-    @FXML
-    private void handleButtonAction(ActionEvent event)
-    {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
         theMove = new Move();
+        field = new UTTTField();
+        gs = new GameState(field);
+        gm = new GameManager(gs);
     }    
 
 
