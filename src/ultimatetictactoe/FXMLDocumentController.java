@@ -10,10 +10,12 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 
 import javafx.scene.control.Label;
 
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import ultimatetictactoe.move.Move;
 
@@ -26,6 +28,7 @@ public class FXMLDocumentController implements Initializable
 {
 
     private Label label;
+    @FXML
     private Button btn00_00;
     @FXML
     private Button btn00_10;
@@ -209,7 +212,6 @@ public class FXMLDocumentController implements Initializable
     private GridPane MircroGridPane9;
     private Move theMove;
     
-    @FXML
     private void handleButtonAction(ActionEvent event)
     {
         System.out.println("You clicked me!");
@@ -226,95 +228,30 @@ public class FXMLDocumentController implements Initializable
     @FXML
     private void handleBtn00_00(ActionEvent event)
     {
-        theMove.setX(0);
-        theMove.setY(0);
+             
+        Button clickedButton = (Button) event.getSource();
+        GridPane microPane = (GridPane) clickedButton.getParent();
+        Integer row = GridPane.getRowIndex((Node) event.getSource());
+        Integer col = GridPane.getColumnIndex((Node) event.getSource());
+        Integer macroRow = GridPane.getRowIndex((Node) microPane);
+        Integer macroCol = GridPane.getColumnIndex((Node) microPane);
+        Button btn = (Button) event.getSource();
+        System.out.println(""+btn.getParent().getId());
+        int r = (row == null) ? 0 : row;
+        int rm = (macroRow == null) ? 0 : macroRow;
+        int c = (col == null) ? 0 : col;
+        int cm = (macroCol == null) ? 0 : macroCol;
+        
+        int Xmove = r + (rm*3);
+        int Ymove = c + (cm*3);
+
+        System.out.println(""+r+","+c);
+        System.out.println(""+cm+","+rm);
+        theMove.setX(Xmove);
+        theMove.setY(Ymove);
 
     }
 
-    @FXML
-    private void handleBtn00_10(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn00_20(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn00_01(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn00_11(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn00_21(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn00_02(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn00_12(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn00_22(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn10_00(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn10_10(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn10_20(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn10_01(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn10_11(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn10_21(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn10_02(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn10_12(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleBtn10_22(ActionEvent event)
-    {
-    }
 
     @FXML
     private void handleBtn20_00(ActionEvent event)
@@ -631,4 +568,16 @@ public class FXMLDocumentController implements Initializable
     {
     }
 
+    @FXML
+    private void handleMouseOnMicro(MouseEvent event)
+    {
+        GridPane micro = (GridPane) event.getSource();
+        System.out.println(""+micro.getId());
+    }
+
+    @FXML
+    private void macroPaneClicked(MouseEvent event)
+    {
+    }
+    
 }
