@@ -9,6 +9,7 @@ import ultimatetictactoe.field.IField;
 import java.util.ArrayList;
 import java.util.List;
 import ultimatetictactoe.move.IMove;
+import ultimatetictactoe.move.Move;
 
 /**
  *
@@ -60,7 +61,23 @@ public class UTTTField implements IField
     @Override
     public List<IMove> getAvailableMoves()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<IMove> theList = new ArrayList<>();
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                if(fullBoard[i][j] == "-1")
+                {
+                    Move aMove = new Move();
+                    aMove.setX(i);
+                    aMove.setY(j);
+                    theList.add(aMove);
+                }
+                
+            }
+            
+        }
+        return theList;
     }
 
     @Override
