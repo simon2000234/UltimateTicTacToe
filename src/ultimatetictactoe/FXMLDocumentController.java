@@ -17,6 +17,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import ultimatetictactoe.field.UTTTField;
+import ultimatetictactoe.game.GameManager;
+import ultimatetictactoe.game.GameState;
 import ultimatetictactoe.move.Move;
 
 
@@ -211,6 +214,9 @@ public class FXMLDocumentController implements Initializable
     @FXML
     private GridPane MircroGridPane9;
     private Move theMove;
+    private GameManager gm;
+    private GameState gs;
+    private UTTTField field;
     
     private void handleButtonAction(ActionEvent event)
     {
@@ -222,13 +228,15 @@ public class FXMLDocumentController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         theMove = new Move();
+        field = new UTTTField();
+        gs = new GameState(field);
+        gm = new GameManager(gs);
     }    
 
 
     @FXML
     private void handleBtn00_00(ActionEvent event)
-    {
-             
+    {             
         Button clickedButton = (Button) event.getSource();
         GridPane microPane = (GridPane) clickedButton.getParent();
         Integer row = GridPane.getRowIndex((Node) event.getSource());
@@ -565,18 +573,6 @@ public class FXMLDocumentController implements Initializable
 
     @FXML
     private void handleBtn22_22(ActionEvent event)
-    {
-    }
-
-    @FXML
-    private void handleMouseOnMicro(MouseEvent event)
-    {
-        GridPane micro = (GridPane) event.getSource();
-        System.out.println(""+micro.getId());
-    }
-
-    @FXML
-    private void macroPaneClicked(MouseEvent event)
     {
     }
     
