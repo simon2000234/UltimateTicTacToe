@@ -15,6 +15,8 @@ import ultimatetictactoe.field.UTTTField;
 public class GameState implements IGameState
 {
     private UTTTField field;
+    private int moveNumber;
+    private int roundNumber;
 
     public GameState(UTTTField field)
     {
@@ -30,25 +32,25 @@ public class GameState implements IGameState
     @Override
     public int getMoveNumber()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return moveNumber;
     }
 
     @Override
     public void setMoveNumber(int moveNumber)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.moveNumber = moveNumber;
     }
 
     @Override
     public int getRoundNumber()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return roundNumber;
     }
 
     @Override
     public void setRoundNumber(int roundNumber)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.roundNumber = roundNumber;
     }
     
 }
