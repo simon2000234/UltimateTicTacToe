@@ -14,6 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import ultimatetictactoe.move.Move;
+
 
 /**
  *
@@ -184,6 +187,27 @@ public class FXMLDocumentController implements Initializable
     private Button btn22_12;
     @FXML
     private Button btn22_22;
+    @FXML
+    private GridPane MacroGridPane;
+    @FXML
+    private GridPane MircroGridPane1;
+    @FXML
+    private GridPane MircroGridPane2;
+    @FXML
+    private GridPane MircroGridPane3;
+    @FXML
+    private GridPane MircroGridPane4;
+    @FXML
+    private GridPane MircroGridPane5;
+    @FXML
+    private GridPane MircroGridPane6;
+    @FXML
+    private GridPane MircroGridPane7;
+    @FXML
+    private GridPane MircroGridPane8;
+    @FXML
+    private GridPane MircroGridPane9;
+    private Move theMove;
     
     @FXML
     private void handleButtonAction(ActionEvent event)
@@ -195,13 +219,16 @@ public class FXMLDocumentController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        theMove = new Move();
     }    
 
 
     @FXML
     private void handleBtn00_00(ActionEvent event)
     {
+        theMove.setX(0);
+        theMove.setY(0);
+
     }
 
     @FXML
