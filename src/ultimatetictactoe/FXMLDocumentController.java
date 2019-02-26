@@ -10,9 +10,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+
+import javafx.scene.control.Label;
+
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import ultimatetictactoe.move.Move;
+
 
 /**
  *
@@ -20,8 +24,8 @@ import ultimatetictactoe.move.Move;
  */
 public class FXMLDocumentController implements Initializable
 {
-    
-    @FXML
+
+    private Label label;
     private Button btn00_00;
     @FXML
     private Button btn00_10;
@@ -205,6 +209,12 @@ public class FXMLDocumentController implements Initializable
     private GridPane MircroGridPane9;
     private Move theMove;
     
+    @FXML
+    private void handleButtonAction(ActionEvent event)
+    {
+        System.out.println("You clicked me!");
+        label.setText("Hello World!");
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -212,11 +222,13 @@ public class FXMLDocumentController implements Initializable
         theMove = new Move();
     }    
 
+
     @FXML
     private void handleBtn00_00(ActionEvent event)
     {
         theMove.setX(0);
         theMove.setY(0);
+
     }
 
     @FXML
@@ -618,5 +630,5 @@ public class FXMLDocumentController implements Initializable
     private void handleBtn22_22(ActionEvent event)
     {
     }
-    
+
 }
