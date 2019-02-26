@@ -231,6 +231,7 @@ public class FXMLDocumentController implements Initializable
     {
         theMove.setX(0);
         theMove.setY(0);
+        System.out.println(field.getBoard().length);
 
     }
 
