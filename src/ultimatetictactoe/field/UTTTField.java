@@ -79,7 +79,36 @@ public class UTTTField implements IField
     @Override
     public void clearBoard()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        macroBoard = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        microBoard1 = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        microBoard2 = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        microBoard3 = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        microBoard4 = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        microBoard5 = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        microBoard6 = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        microBoard7 = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        microBoard8 = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
+        microBoard9 = new String[][]{{"-1","-1","-1"},
+                                    {"-1","-1","-1"},
+                                    {"-1","-1","-1"}};
     }
 
     @Override
