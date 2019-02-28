@@ -255,7 +255,7 @@ public class FXMLDocumentController implements Initializable
         {
             return;  //move vas not valid;
         }
-
+        System.out.println(Xmove + "," + Ymove);
         if ((Xmove == 0 && Ymove == 0) || (Xmove == 0 && Ymove == 3) || (Xmove == 0 && Ymove == 6)
                 || (Xmove == 3 && Ymove == 0) || (Xmove == 3 && Ymove == 3) || (Xmove == 3 && Ymove == 6)
                 || (Xmove == 6 && Ymove == 0) || (Xmove == 6 && Ymove == 3) || (Xmove == 6 && Ymove == 6))
@@ -319,6 +319,33 @@ public class FXMLDocumentController implements Initializable
                 for (int j = 0; j < 9; j++)
                 {
                     if ((i >5) && (j <=2))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        if ((Xmove == 1 && Ymove == 0) || (Xmove == 1 && Ymove == 3) || (Xmove == 1 && Ymove == 6)
+                || (Xmove == 4 && Ymove == 0) || (Xmove == 4 && Ymove == 3) || (Xmove == 4 && Ymove == 6)
+                || (Xmove == 7 && Ymove == 0) || (Xmove == 7 && Ymove == 3) || (Xmove == 7 && Ymove == 6))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i <3) && (j >2 && j <6))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
