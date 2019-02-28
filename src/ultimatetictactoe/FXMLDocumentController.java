@@ -244,21 +244,21 @@ public class FXMLDocumentController implements Initializable
         Integer macroRow = GridPane.getRowIndex((Node) microPane);
         Integer macroCol = GridPane.getColumnIndex((Node) microPane);
         Button btn = (Button) event.getSource();
-        System.out.println("" + btn.getParent().getId());
         int r = (row == null) ? 0 : row;
         int rm = (macroRow == null) ? 0 : macroRow;
         int c = (col == null) ? 0 : col;
         int cm = (macroCol == null) ? 0 : macroCol;
         String xOrO = player == 0 ? "X" : "O";
-        btn.setText(xOrO);
         int Xmove = r + (rm * 3);
         int Ymove = c + (cm * 3);
-        System.out.println(""+r+","+c);
-        System.out.println(""+cm+","+rm);
         theMove.setX(Xmove);
         theMove.setY(Ymove);
-        gm.updateGame(theMove);
-        System.out.println(""+Arrays.deepToString(gs.getField().getBoard()));
+        if (gm.updateGame(theMove))
+        {
+            btn.setText(xOrO);
+        }
+        System.out.println("" + Arrays.deepToString(gs.getField().getBoard()));
+        System.out.println("" + player);
 
     }
 
@@ -279,7 +279,7 @@ public class FXMLDocumentController implements Initializable
 
     @FXML
     private void handleBtn00_11(ActionEvent event)
-    {     
+    {
     }
 
     @FXML
