@@ -241,7 +241,6 @@ public class FXMLDocumentController implements Initializable
         theMove.setX(0);
         theMove.setY(0);
         gm.updateGame(theMove);
-        gs.getField().getBoard()[0][0] = "1";
         System.out.println(Arrays.deepToString(gs.getField().getBoard()));
 
     }

@@ -141,7 +141,7 @@ public class GameManager
 
         for (int i = 0; i < theList.size(); i++)
         {
-            if (theList.get(i) == move)
+            if (theList.get(i).getX() == move.getX() && theList.get(i).getY() == move.getY())
             {
                 return true;
             }
@@ -164,6 +164,6 @@ public class GameManager
     private void updateMacroboard(IMove move)
     {
         //TODO: Update the macroboard to the new state 
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 }
