@@ -266,15 +266,15 @@ public class FXMLDocumentController implements Initializable
                 {
                     if (i <= 2 && j <= 2)
                     {
-                        if (field.getBoard()[i][j] == ".")
+                        if (field.getBoard()[j][i] == ".")
                         {
-                            field.getBoard()[i][j] = "-1";
+                            field.getBoard()[j][i] = "-1";
                         }
                     } else 
                     {
-                        if (field.getBoard()[i][j] != "0" && field.getBoard()[i][j] != "1")
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
-                            field.getBoard()[i][j] = ".";
+                            field.getBoard()[j][i] = ".";
                         }
                     }
 
@@ -299,7 +299,34 @@ public class FXMLDocumentController implements Initializable
                         }
                     } else 
                     {
-                        if (field.getBoard()[j][i] != "0" && field.getBoard()[i][j] != "1")
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        if ((Xmove == 0 && Ymove == 2) || (Xmove == 0 && Ymove == 5) || (Xmove == 0 && Ymove == 8)
+                || (Xmove == 3 && Ymove == 2) || (Xmove == 3 && Ymove == 5) || (Xmove == 3 && Ymove == 8)
+                || (Xmove == 6 && Ymove == 2) || (Xmove == 6 && Ymove == 5) || (Xmove == 6 && Ymove == 8))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i >5) && (j <=2))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
                             field.getBoard()[j][i] = ".";
                         }
