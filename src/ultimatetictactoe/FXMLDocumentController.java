@@ -238,22 +238,22 @@ public class FXMLDocumentController implements Initializable
         Integer macroRow = GridPane.getRowIndex((Node) microPane);
         Integer macroCol = GridPane.getColumnIndex((Node) microPane);
         Button btn = (Button) event.getSource();
-        System.out.println("" + btn.getParent().getId());
         int r = (row == null) ? 0 : row;
         int rm = (macroRow == null) ? 0 : macroRow;
         int c = (col == null) ? 0 : col;
         int cm = (macroCol == null) ? 0 : macroCol;
         String xOrO = player == 0 ? "X" : "O";
-        btn.setText(xOrO);
         int Xmove = r + (rm * 3);
         int Ymove = c + (cm * 3);
-        System.out.println("" + r + "," + c);
-        System.out.println("" + cm + "," + rm);
         theMove.setX(Xmove);
         theMove.setY(Ymove);
-        if (gm.updateGame(theMove) == false)
+        if (gm.updateGame(theMove))
         {
-            return; //the move was not valid
+            btn.setText(xOrO);
+        }
+        else 
+        {
+            return;  //move vas not valid;
         }
 
         if ((Xmove == 0 && Ymove == 0) || (Xmove == 0 && Ymove == 3) || (Xmove == 0 && Ymove == 6)
