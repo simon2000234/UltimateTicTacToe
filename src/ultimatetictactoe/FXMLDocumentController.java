@@ -251,7 +251,10 @@ public class FXMLDocumentController implements Initializable
         System.out.println("" + cm + "," + rm);
         theMove.setX(Xmove);
         theMove.setY(Ymove);
-        gm.updateGame(theMove);
+        if (gm.updateGame(theMove) == false)
+        {
+            return; //the move was not valid
+        }
 
         if ((Xmove == 0 && Ymove == 0) || (Xmove == 0 && Ymove == 3) || (Xmove == 0 && Ymove == 6)
                 || (Xmove == 3 && Ymove == 0) || (Xmove == 3 && Ymove == 3) || (Xmove == 3 && Ymove == 6)
@@ -272,6 +275,33 @@ public class FXMLDocumentController implements Initializable
                         if (field.getBoard()[i][j] != "0" && field.getBoard()[i][j] != "1")
                         {
                             field.getBoard()[i][j] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        if ((Xmove == 0 && Ymove == 1) || (Xmove == 0 && Ymove == 4) || (Xmove == 0 && Ymove == 7)
+                || (Xmove == 3 && Ymove == 1) || (Xmove == 3 && Ymove == 4) || (Xmove == 3 && Ymove == 7)
+                || (Xmove == 6 && Ymove == 1) || (Xmove == 6 && Ymove == 4) || (Xmove == 6 && Ymove == 7))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i > 2 && i <6) && (j <=2 ))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[i][j] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
                         }
                     }
 
