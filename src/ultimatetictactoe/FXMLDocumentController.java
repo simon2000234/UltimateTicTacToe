@@ -218,12 +218,6 @@ public class FXMLDocumentController implements Initializable
     private GameState gs;
     private UTTTField field;
 
-    private void handleButtonAction(ActionEvent event)
-    {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -258,7 +252,7 @@ public class FXMLDocumentController implements Initializable
         theMove.setX(Xmove);
         theMove.setY(Ymove);
         gm.updateGame(theMove);
-        System.out.println(""+Arrays.deepToString(gs.getField().getBoard()));
+        System.out.println(Arrays.deepToString(gs.getField().getBoard()));
 
     }
 
