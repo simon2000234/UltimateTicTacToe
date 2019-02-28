@@ -218,12 +218,6 @@ public class FXMLDocumentController implements Initializable
     private GameState gs;
     private UTTTField field;
 
-    private void handleButtonAction(ActionEvent event)
-    {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -257,8 +251,35 @@ public class FXMLDocumentController implements Initializable
         {
             btn.setText(xOrO);
         }
-        System.out.println("" + Arrays.deepToString(gs.getField().getBoard()));
-        System.out.println("" + player);
+
+        if ((Xmove == 0 && Ymove == 0) || (Xmove == 0 && Ymove == 3) || (Xmove == 0 && Ymove == 6)
+                || (Xmove == 3 && Ymove == 0) || (Xmove == 3 && Ymove == 3) || (Xmove == 3 && Ymove == 6)
+                || (Xmove == 6 && Ymove == 0) || (Xmove == 6 && Ymove == 3) || (Xmove == 6 && Ymove == 6))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (i <= 2 && j <= 2)
+                    {
+                        if (field.getBoard()[i][j] == ".")
+                        {
+                            field.getBoard()[i][j] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[i][j] != "0" && field.getBoard()[i][j] != "1")
+                        {
+                            field.getBoard()[i][j] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        System.out.println(Arrays.deepToString(gs.getField().getBoard()));
 
     }
 
