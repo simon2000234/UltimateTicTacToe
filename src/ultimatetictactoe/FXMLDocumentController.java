@@ -23,7 +23,6 @@ import ultimatetictactoe.game.GameManager;
 import ultimatetictactoe.game.GameState;
 import ultimatetictactoe.move.Move;
 
-
 /**
  *
  * @author Melchertsen
@@ -218,13 +217,7 @@ public class FXMLDocumentController implements Initializable
     private GameManager gm;
     private GameState gs;
     private UTTTField field;
-    
-    private void handleButtonAction(ActionEvent event)
-    {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -232,14 +225,32 @@ public class FXMLDocumentController implements Initializable
         field = new UTTTField();
         gs = new GameState(field);
         gm = new GameManager(gs);
-    }    
-
+    }
 
     @FXML
     private void handleBtn00_00(ActionEvent event)
     {
-        theMove.setX(0);
-        theMove.setY(0);
+        int player = gm.getCurrentPlayer();
+        Button clickedButton = (Button) event.getSource();
+        GridPane microPane = (GridPane) clickedButton.getParent();
+        Integer row = GridPane.getRowIndex((Node) event.getSource());
+        Integer col = GridPane.getColumnIndex((Node) event.getSource());
+        Integer macroRow = GridPane.getRowIndex((Node) microPane);
+        Integer macroCol = GridPane.getColumnIndex((Node) microPane);
+        Button btn = (Button) event.getSource();
+        System.out.println("" + btn.getParent().getId());
+        int r = (row == null) ? 0 : row;
+        int rm = (macroRow == null) ? 0 : macroRow;
+        int c = (col == null) ? 0 : col;
+        int cm = (macroCol == null) ? 0 : macroCol;
+        String xOrO = player == 0 ? "X" : "O";
+        btn.setText(xOrO);
+        int Xmove = r + (rm * 3);
+        int Ymove = c + (cm * 3);
+        System.out.println(""+r+","+c);
+        System.out.println(""+cm+","+rm);
+        theMove.setX(Xmove);
+        theMove.setY(Ymove);
         gm.updateGame(theMove);
         System.out.println(Arrays.deepToString(gs.getField().getBoard()));
 
@@ -263,28 +274,7 @@ public class FXMLDocumentController implements Initializable
     @FXML
     private void handleBtn00_11(ActionEvent event)
     {     
-        Button clickedButton = (Button) event.getSource();
-        GridPane microPane = (GridPane) clickedButton.getParent();
-        Integer row = GridPane.getRowIndex((Node) event.getSource());
-        Integer col = GridPane.getColumnIndex((Node) event.getSource());
-        Integer macroRow = GridPane.getRowIndex((Node) microPane);
-        Integer macroCol = GridPane.getColumnIndex((Node) microPane);
-        Button btn = (Button) event.getSource();
-        System.out.println(""+btn.getParent().getId());
-        int r = (row == null) ? 0 : row;
-        int rm = (macroRow == null) ? 0 : macroRow;
-        int c = (col == null) ? 0 : col;
-        int cm = (macroCol == null) ? 0 : macroCol;
-        
-        int Xmove = r + (rm*3);
-        int Ymove = c + (cm*3);
-        System.out.println(""+r+","+c);
-        System.out.println(""+cm+","+rm);
-        theMove.setX(Xmove);
-        theMove.setY(Ymove);
-
     }
-
 
     @FXML
     private void handleBtn20_00(ActionEvent event)
@@ -600,5 +590,5 @@ public class FXMLDocumentController implements Initializable
     private void handleBtn22_22(ActionEvent event)
     {
     }
-    
+
 }
