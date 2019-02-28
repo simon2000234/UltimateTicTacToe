@@ -253,11 +253,33 @@ public class FXMLDocumentController implements Initializable
         btn.setText(xOrO);
         int Xmove = r + (rm * 3);
         int Ymove = c + (cm * 3);
+        System.out.println(""+r+","+c);
+        System.out.println(""+cm+","+rm);
         theMove.setX(Xmove);
         theMove.setY(Ymove);
         gm.updateGame(theMove);
         System.out.println(""+Arrays.deepToString(gs.getField().getBoard()));
 
+    }
+
+    @FXML
+    private void handleBtn00_10(ActionEvent event)
+    {
+    }
+
+    @FXML
+    private void handleBtn00_20(ActionEvent event)
+    {
+    }
+
+    @FXML
+    private void handleBtn00_01(ActionEvent event)
+    {
+    }
+
+    @FXML
+    private void handleBtn00_11(ActionEvent event)
+    {     
     }
 
     @FXML
