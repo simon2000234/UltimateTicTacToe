@@ -96,6 +96,7 @@ public class GameManager
         //Update the currentState
         updateBoard(move);
         updateMacroboard(move);
+        checkForWin(move);
 
         //Update currentPlayer
         currentPlayer = (currentPlayer + 1) % 2;
@@ -171,5 +172,84 @@ public class GameManager
     {
         return currentPlayer;
     }
+
+    public int checkForWin(IMove move)
+    {
+        int playerWon = -1;
+        int mbX = mbXsetter(move);
+        int mbY = mbYsetter(move);
+        String gameBoard[][] = currentState.getField().getBoard();
+        if (mbX >= 0 && mbY >= 0)
+        {
+            for (int j = 0; j <= 2; j++)
+            {
+                if (!gameBoard[j + mbX][0 + mbY].equals("-1") && gameBoard[j + mbX][0 + mbY].equals(gameBoard[j + mbX][1 + mbY]) && gameBoard[j + mbX][1 + mbY].equals(gameBoard[j + mbX][2 + mbY]))
+                {
+                    playerWon = Integer.parseInt(gameBoard[j + mbX][0 + mbY]);
+                    System.out.println("Winner is Player "+playerWon);
+                    return playerWon;
+                } else if (!gameBoard[0 + mbX][j + mbY].equals("-1") && gameBoard[0 + mbX][j + mbY].equals(gameBoard[1 + mbX][j + mbY]) && gameBoard[1 + mbX][j + mbY].equals(gameBoard[2 + mbX][j + mbY]))
+                {
+                    playerWon = Integer.parseInt(gameBoard[0 + mbX][j + mbY]);
+                    System.out.println("Winner is Player "+playerWon);
+                    return playerWon;
+                } else if (!gameBoard[0 + mbX][0 + mbY].equals("-1") && gameBoard[0 + mbX][0 + mbY].equals(gameBoard[1 + mbX][1 + mbY]) && gameBoard[1 + mbX][1 + mbY].equals(gameBoard[2 + mbX][2 + mbY]))
+                {
+                    playerWon = Integer.parseInt(gameBoard[0 + mbX][0 + mbY]);
+                    System.out.println("Winner is Player "+playerWon);
+                    return playerWon;
+                } else if (!gameBoard[0 + mbX][2 + mbY].equals("-1") && gameBoard[0 + mbX][2 + mbY].equals(gameBoard[1 + mbX][1 + mbY]) && gameBoard[1 + mbX][1 + mbY].equals(gameBoard[2 + mbX][0 + mbY]))
+                {
+                    playerWon = Integer.parseInt(gameBoard[0 + mbX][2 + mbY]);
+                    System.out.println("Winner is Player "+playerWon);
+                    return playerWon;
+                }
+            }
+        }
+        System.out.println("The winner (-1 is no winner yet)"+playerWon);
+        return playerWon;
+    }
+
+    public int mbXsetter(IMove move)
+    {
+        int mbX = -1;
+        //row1
+        if (0 <= move.getX() && move.getX() < 3)
+        {
+            mbX = 0;
+        }
+        //row2
+        if (2 < move.getX() && move.getX() < 6)
+        {
+            mbX = 3;
+        }
+        //row3
+        if (5 < move.getX() && move.getX() < 9)
+        {
+            mbX = 6;
+        }
+        return mbX;
+    }
     
+    public int mbYsetter(IMove move)
+    {
+        int mbY = -1;
+        //row1
+        if (0 <= move.getY() && move.getY() < 3)
+        {
+            mbY = 0;
+        }
+        //row2
+        if (2 < move.getY() && move.getY() < 6)
+        {
+            mbY = 3;
+        }
+        //row3
+        if (5 < move.getY() && move.getY() < 9)
+        {
+            mbY = 6;
+        }
+        return mbY;
+    }
+
 }
