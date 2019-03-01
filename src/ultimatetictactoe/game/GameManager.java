@@ -191,24 +191,28 @@ public class GameManager
                 {
                     playerWon = Integer.parseInt(gameBoard[j + mbX][0 + mbY]);
                     currentState.getField().getMacroboard()[(mbX / 3)][(mbY / 3)] = "" + playerWon;
+                    setBoardToWinner(mbX, mbY, gameBoard[j + mbX][0 + mbY]);
                     System.out.println("Winner is Player " + playerWon);
                     return playerWon;
                 } else if (!gameBoard[0 + mbX][j + mbY].equals("-1") && gameBoard[0 + mbX][j + mbY].equals(gameBoard[1 + mbX][j + mbY]) && gameBoard[1 + mbX][j + mbY].equals(gameBoard[2 + mbX][j + mbY]))
                 {
                     playerWon = Integer.parseInt(gameBoard[0 + mbX][j + mbY]);
                     currentState.getField().getMacroboard()[(mbX / 3)][(mbY / 3)] = "" + playerWon;
+                    setBoardToWinner(mbX, mbY, gameBoard[0 + mbX][j + mbY]);
                     System.out.println("Winner is Player " + playerWon);
                     return playerWon;
                 } else if (!gameBoard[0 + mbX][0 + mbY].equals("-1") && gameBoard[0 + mbX][0 + mbY].equals(gameBoard[1 + mbX][1 + mbY]) && gameBoard[1 + mbX][1 + mbY].equals(gameBoard[2 + mbX][2 + mbY]))
                 {
                     playerWon = Integer.parseInt(gameBoard[0 + mbX][0 + mbY]);
                     currentState.getField().getMacroboard()[(mbX / 3)][(mbY / 3)] = "" + playerWon;
+                    setBoardToWinner(mbX, mbY, gameBoard[0 + mbX][0 + mbY]);
                     System.out.println("Winner is Player " + playerWon);
                     return playerWon;
                 } else if (!gameBoard[0 + mbX][2 + mbY].equals("-1") && gameBoard[0 + mbX][2 + mbY].equals(gameBoard[1 + mbX][1 + mbY]) && gameBoard[1 + mbX][1 + mbY].equals(gameBoard[2 + mbX][0 + mbY]))
                 {
                     playerWon = Integer.parseInt(gameBoard[0 + mbX][2 + mbY]);
                     currentState.getField().getMacroboard()[(mbX / 3)][(mbY / 3)] = "" + playerWon;
+                    setBoardToWinner(mbX, mbY, gameBoard[0 + mbX][2 + mbY]);
                     System.out.println("Winner is Player " + playerWon);
                     return playerWon;
                 }
@@ -269,26 +273,41 @@ public class GameManager
             if (!gameBoard[j][0].equals("-1") && gameBoard[j][0].equals(gameBoard[j][1]) && gameBoard[j][1].equals(gameBoard[j][2]))
             {
                 playerWon = Integer.parseInt(gameBoard[j][0]);
-                System.out.println("PLAYER "+playerWon+" HAS WON THE GAME");
+                System.out.println("PLAYER " + playerWon + " HAS WON THE GAME");
                 return playerWon;
             } else if (!gameBoard[0][j].equals("-1") && gameBoard[0][j].equals(gameBoard[1][j]) && gameBoard[1][j].equals(gameBoard[2][j]))
             {
                 playerWon = Integer.parseInt(gameBoard[0][j]);
-                System.out.println("PLAYER "+playerWon+" HAS WON THE GAME");
+                System.out.println("PLAYER " + playerWon + " HAS WON THE GAME");
                 return playerWon;
             } else if (!gameBoard[0][0].equals("-1") && gameBoard[0][0].equals(gameBoard[1][1]) && gameBoard[1][1].equals(gameBoard[2][2]))
             {
                 playerWon = Integer.parseInt(gameBoard[0][0]);
-                System.out.println("PLAYER "+playerWon+" HAS WON THE GAME");
+                System.out.println("PLAYER " + playerWon + " HAS WON THE GAME");
                 return playerWon;
             } else if (!gameBoard[0][2].equals("-1") && gameBoard[0][2].equals(gameBoard[1][1]) && gameBoard[1][1].equals(gameBoard[2][0]))
             {
                 playerWon = Integer.parseInt(gameBoard[0][2]);
-                System.out.println("PLAYER "+playerWon+" HAS WON THE GAME");
+                System.out.println("PLAYER " + playerWon + " HAS WON THE GAME");
                 return playerWon;
             }
         }
         return playerWon;
+    }
+
+    public void setBoardToWinner(int x, int y, String winner)
+    {
+        String gameBoard[][] = currentState.getField().getBoard();
+        for (int i = 0+x; i < 3+x; i++)
+        {
+            for (int j = 0+y; j < 3+y; j++)
+            {
+                gameBoard[i][j] = winner;
+                
+            }
+            
+        }
+        
     }
 
 }
