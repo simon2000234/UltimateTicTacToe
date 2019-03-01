@@ -538,6 +538,7 @@ public class FXMLDocumentController implements Initializable
                 }
             }
         }
+
         System.out.println(Arrays.deepToString(gs.getField().getBoard()));
         System.out.println(Arrays.deepToString(gs.getField().getMacroboard()));
     }
@@ -943,5 +944,4 @@ public class FXMLDocumentController implements Initializable
     )
     {
     }
-
 }
