@@ -255,7 +255,10 @@ public class FXMLDocumentController implements Initializable
         {
             return;  //move vas not valid;
         }
-
+        System.out.println(Xmove + "," + Ymove);
+        //x**
+        //***
+        //***
         if ((Xmove == 0 && Ymove == 0) || (Xmove == 0 && Ymove == 3) || (Xmove == 0 && Ymove == 6)
                 || (Xmove == 3 && Ymove == 0) || (Xmove == 3 && Ymove == 3) || (Xmove == 3 && Ymove == 6)
                 || (Xmove == 6 && Ymove == 0) || (Xmove == 6 && Ymove == 3) || (Xmove == 6 && Ymove == 6))
@@ -266,15 +269,15 @@ public class FXMLDocumentController implements Initializable
                 {
                     if (i <= 2 && j <= 2)
                     {
-                        if (field.getBoard()[i][j] == ".")
+                        if (field.getBoard()[j][i] == ".")
                         {
-                            field.getBoard()[i][j] = "-1";
+                            field.getBoard()[j][i] = "-1";
                         }
                     } else 
                     {
-                        if (field.getBoard()[i][j] != "0" && field.getBoard()[i][j] != "1")
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
-                            field.getBoard()[i][j] = ".";
+                            field.getBoard()[j][i] = ".";
                         }
                     }
 
@@ -283,6 +286,9 @@ public class FXMLDocumentController implements Initializable
             }
 
         }
+        //*x*
+        //***
+        //***
         if ((Xmove == 0 && Ymove == 1) || (Xmove == 0 && Ymove == 4) || (Xmove == 0 && Ymove == 7)
                 || (Xmove == 3 && Ymove == 1) || (Xmove == 3 && Ymove == 4) || (Xmove == 3 && Ymove == 7)
                 || (Xmove == 6 && Ymove == 1) || (Xmove == 6 && Ymove == 4) || (Xmove == 6 && Ymove == 7))
@@ -299,7 +305,7 @@ public class FXMLDocumentController implements Initializable
                         }
                     } else 
                     {
-                        if (field.getBoard()[j][i] != "0" && field.getBoard()[i][j] != "1")
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
                             field.getBoard()[j][i] = ".";
                         }
@@ -310,6 +316,217 @@ public class FXMLDocumentController implements Initializable
             }
 
         }
+        //**x
+        //***
+        //***
+        if ((Xmove == 0 && Ymove == 2) || (Xmove == 0 && Ymove == 5) || (Xmove == 0 && Ymove == 8)
+                || (Xmove == 3 && Ymove == 2) || (Xmove == 3 && Ymove == 5) || (Xmove == 3 && Ymove == 8)
+                || (Xmove == 6 && Ymove == 2) || (Xmove == 6 && Ymove == 5) || (Xmove == 6 && Ymove == 8))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i >5) && (j <=2))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        //***
+        //x**
+        //***
+        if ((Xmove == 1 && Ymove == 0) || (Xmove == 1 && Ymove == 3) || (Xmove == 1 && Ymove == 6)
+                || (Xmove == 4 && Ymove == 0) || (Xmove == 4 && Ymove == 3) || (Xmove == 4 && Ymove == 6)
+                || (Xmove == 7 && Ymove == 0) || (Xmove == 7 && Ymove == 3) || (Xmove == 7 && Ymove == 6))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i <3) && (j >2 && j <6))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        //***
+        //*x*
+        //***
+        if ((Xmove == 1 && Ymove == 1) || (Xmove == 1 && Ymove == 4) || (Xmove == 1 && Ymove == 7)
+                || (Xmove == 4 && Ymove == 1) || (Xmove == 4 && Ymove == 4) || (Xmove == 4 && Ymove == 7)
+                || (Xmove == 7 && Ymove == 1) || (Xmove == 7 && Ymove == 4) || (Xmove == 7 && Ymove == 7))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i >2 && i <6) && (j >2 && j <6))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        //***
+        //**x
+        //***
+        if ((Xmove == 1 && Ymove == 2) || (Xmove == 1 && Ymove == 5) || (Xmove == 1 && Ymove == 8)
+                || (Xmove == 4 && Ymove == 2) || (Xmove == 4 && Ymove == 5) || (Xmove == 4 && Ymove == 8)
+                || (Xmove == 7 && Ymove == 2) || (Xmove == 7 && Ymove == 5) || (Xmove == 7 && Ymove == 8))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i >5) && (j >2 && j <6))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        //***
+        //***
+        //x**
+        if ((Xmove == 2 && Ymove == 0) || (Xmove == 2 && Ymove == 3) || (Xmove == 2 && Ymove == 6)
+                || (Xmove == 5 && Ymove == 0) || (Xmove == 5 && Ymove == 3) || (Xmove == 5 && Ymove == 6)
+                || (Xmove == 8 && Ymove == 0) || (Xmove == 8 && Ymove == 3) || (Xmove == 8 && Ymove == 6))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i <3) && (j >5))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        //***
+        //***
+        //*x*
+        if ((Xmove == 2 && Ymove == 1) || (Xmove == 2 && Ymove == 4) || (Xmove == 2 && Ymove == 7)
+                || (Xmove == 5 && Ymove == 1) || (Xmove == 5 && Ymove == 4) || (Xmove == 5 && Ymove == 7)
+                || (Xmove == 8 && Ymove == 1) || (Xmove == 8 && Ymove == 4) || (Xmove == 8 && Ymove == 7))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i >2 && i<6) && (j >5))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        //***
+        //***
+        //**x
+        if ((Xmove == 2 && Ymove == 2) || (Xmove == 2 && Ymove == 5) || (Xmove == 2 && Ymove == 8)
+                || (Xmove == 5 && Ymove == 2) || (Xmove == 5 && Ymove == 5) || (Xmove == 5 && Ymove == 8)
+                || (Xmove == 8 && Ymove == 2) || (Xmove == 8 && Ymove == 5) || (Xmove == 8 && Ymove == 8))
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if ((i >5) && (j >5))
+                    {
+                        if (field.getBoard()[j][i] == ".")
+                        {
+                            field.getBoard()[j][i] = "-1";
+                        }
+                    } else 
+                    {
+                        if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
+                        {
+                            field.getBoard()[j][i] = ".";
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+        
         System.out.println(Arrays.deepToString(gs.getField().getBoard()));
 
     }
