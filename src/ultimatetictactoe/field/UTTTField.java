@@ -95,7 +95,16 @@ public class UTTTField implements IField
     @Override
     public boolean isFull()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<IMove> theList = new ArrayList<>();
+        theList.addAll(getAvailableMoves());
+        if(theList.size() == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     @Override

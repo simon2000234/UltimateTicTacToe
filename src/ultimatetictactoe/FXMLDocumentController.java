@@ -250,8 +250,7 @@ public class FXMLDocumentController implements Initializable
         if (gm.updateGame(theMove))
         {
             btn.setText(xOrO);
-        }
-        else 
+        } else
         {
             return;  //move vas not valid;
         }
@@ -273,7 +272,7 @@ public class FXMLDocumentController implements Initializable
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -297,13 +296,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i > 2 && i <6) && (j <=2 ))
+                    if ((i > 2 && i < 6) && (j <= 2))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -327,13 +326,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >5) && (j <=2))
+                    if ((i > 5) && (j <= 2))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -357,13 +356,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i <3) && (j >2 && j <6))
+                    if ((i < 3) && (j > 2 && j < 6))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -387,13 +386,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >2 && i <6) && (j >2 && j <6))
+                    if ((i > 2 && i < 6) && (j > 2 && j < 6))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -417,13 +416,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >5) && (j >2 && j <6))
+                    if ((i > 5) && (j > 2 && j < 6))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -447,13 +446,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i <3) && (j >5))
+                    if ((i < 3) && (j > 5))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -477,13 +476,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >2 && i<6) && (j >5))
+                    if ((i > 2 && i < 6) && (j > 5))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -507,13 +506,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >5) && (j >5))
+                    if ((i > 5) && (j > 5))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -526,344 +525,422 @@ public class FXMLDocumentController implements Initializable
             }
 
         }
-        
+        if (field.isFull() == true)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (field.getBoard()[j][i] == ".")
+                    {
+                        field.getBoard()[j][i] = "-1";
+                    }
+                }
+            }
+        }
         System.out.println(Arrays.deepToString(gs.getField().getBoard()));
         System.out.println(Arrays.deepToString(gs.getField().getMacroboard()));
-
     }
 
     @FXML
-    private void handleBtn00_10(ActionEvent event)
+    private void handleBtn00_10(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn00_20(ActionEvent event)
+    private void handleBtn00_20(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn00_01(ActionEvent event)
+    private void handleBtn00_01(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn00_11(ActionEvent event)
+    private void handleBtn00_11(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn20_00(ActionEvent event)
+    private void handleBtn20_00(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn20_10(ActionEvent event)
+    private void handleBtn20_10(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn20_20(ActionEvent event)
+    private void handleBtn20_20(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn20_01(ActionEvent event)
+    private void handleBtn20_01(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn20_11(ActionEvent event)
+    private void handleBtn20_11(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn20_21(ActionEvent event)
+    private void handleBtn20_21(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn20_02(ActionEvent event)
+    private void handleBtn20_02(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn20_12(ActionEvent event)
+    private void handleBtn20_12(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn20_22(ActionEvent event)
+    private void handleBtn20_22(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn01_00(ActionEvent event)
+    private void handleBtn01_00(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn01_10(ActionEvent event)
+    private void handleBtn01_10(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn01_20(ActionEvent event)
+    private void handleBtn01_20(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn01_01(ActionEvent event)
+    private void handleBtn01_01(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn01_11(ActionEvent event)
+    private void handleBtn01_11(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn01_21(ActionEvent event)
+    private void handleBtn01_21(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn01_02(ActionEvent event)
+    private void handleBtn01_02(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn01_12(ActionEvent event)
+    private void handleBtn01_12(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn01_22(ActionEvent event)
+    private void handleBtn01_22(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn11_00(ActionEvent event)
+    private void handleBtn11_00(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn11_10(ActionEvent event)
+    private void handleBtn11_10(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn11_20(ActionEvent event)
+    private void handleBtn11_20(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn11_01(ActionEvent event)
+    private void handleBtn11_01(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn11_11(ActionEvent event)
+    private void handleBtn11_11(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn11_21(ActionEvent event)
+    private void handleBtn11_21(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn11_02(ActionEvent event)
+    private void handleBtn11_02(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn11_12(ActionEvent event)
+    private void handleBtn11_12(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn11_22(ActionEvent event)
+    private void handleBtn11_22(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn21_00(ActionEvent event)
+    private void handleBtn21_00(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn21_10(ActionEvent event)
+    private void handleBtn21_10(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn21_20(ActionEvent event)
+    private void handleBtn21_20(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn21_01(ActionEvent event)
+    private void handleBtn21_01(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn21_11(ActionEvent event)
+    private void handleBtn21_11(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn21_21(ActionEvent event)
+    private void handleBtn21_21(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn21_02(ActionEvent event)
+    private void handleBtn21_02(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn21_12(ActionEvent event)
+    private void handleBtn21_12(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn21_22(ActionEvent event)
+    private void handleBtn21_22(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn02_00(ActionEvent event)
+    private void handleBtn02_00(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn02_10(ActionEvent event)
+    private void handleBtn02_10(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn02_20(ActionEvent event)
+    private void handleBtn02_20(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn02_01(ActionEvent event)
+    private void handleBtn02_01(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn02_11(ActionEvent event)
+    private void handleBtn02_11(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn02_21(ActionEvent event)
+    private void handleBtn02_21(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn02_02(ActionEvent event)
+    private void handleBtn02_02(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn02_12(ActionEvent event)
+    private void handleBtn02_12(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn02_22(ActionEvent event)
+    private void handleBtn02_22(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn12_00(ActionEvent event)
+    private void handleBtn12_00(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn12_10(ActionEvent event)
+    private void handleBtn12_10(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn12_20(ActionEvent event)
+    private void handleBtn12_20(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn12_01(ActionEvent event)
+    private void handleBtn12_01(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn12_11(ActionEvent event)
+    private void handleBtn12_11(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn12_21(ActionEvent event)
+    private void handleBtn12_21(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn12_02(ActionEvent event)
+    private void handleBtn12_02(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn12_12(ActionEvent event)
+    private void handleBtn12_12(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn12_22(ActionEvent event)
+    private void handleBtn12_22(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn22_00(ActionEvent event)
+    private void handleBtn22_00(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn22_10(ActionEvent event)
+    private void handleBtn22_10(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn22_20(ActionEvent event)
+    private void handleBtn22_20(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn22_01(ActionEvent event)
+    private void handleBtn22_01(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn22_11(ActionEvent event)
+    private void handleBtn22_11(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn22_21(ActionEvent event)
+    private void handleBtn22_21(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn22_02(ActionEvent event)
+    private void handleBtn22_02(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn22_12(ActionEvent event)
+    private void handleBtn22_12(ActionEvent event
+    )
     {
     }
 
     @FXML
-    private void handleBtn22_22(ActionEvent event)
+    private void handleBtn22_22(ActionEvent event
+    )
     {
     }
 
