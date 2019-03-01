@@ -250,8 +250,7 @@ public class FXMLDocumentController implements Initializable
         if (gm.updateGame(theMove))
         {
             btn.setText(xOrO);
-        }
-        else 
+        } else
         {
             return;  //move vas not valid;
         }
@@ -273,7 +272,7 @@ public class FXMLDocumentController implements Initializable
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -297,13 +296,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i > 2 && i <6) && (j <=2 ))
+                    if ((i > 2 && i < 6) && (j <= 2))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -327,13 +326,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >5) && (j <=2))
+                    if ((i > 5) && (j <= 2))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -357,13 +356,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i <3) && (j >2 && j <6))
+                    if ((i < 3) && (j > 2 && j < 6))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -387,13 +386,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >2 && i <6) && (j >2 && j <6))
+                    if ((i > 2 && i < 6) && (j > 2 && j < 6))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -417,13 +416,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >5) && (j >2 && j <6))
+                    if ((i > 5) && (j > 2 && j < 6))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -447,13 +446,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i <3) && (j >5))
+                    if ((i < 3) && (j > 5))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -477,13 +476,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >2 && i<6) && (j >5))
+                    if ((i > 2 && i < 6) && (j > 5))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -507,13 +506,13 @@ public class FXMLDocumentController implements Initializable
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    if ((i >5) && (j >5))
+                    if ((i > 5) && (j > 5))
                     {
                         if (field.getBoard()[j][i] == ".")
                         {
                             field.getBoard()[j][i] = "-1";
                         }
-                    } else 
+                    } else
                     {
                         if (field.getBoard()[j][i] != "0" && field.getBoard()[j][i] != "1")
                         {
@@ -526,7 +525,7 @@ public class FXMLDocumentController implements Initializable
             }
 
         }
-        
+
         System.out.println(Arrays.deepToString(gs.getField().getBoard()));
 
     }
@@ -865,5 +864,4 @@ public class FXMLDocumentController implements Initializable
     private void handleBtn22_22(ActionEvent event)
     {
     }
-
 }
